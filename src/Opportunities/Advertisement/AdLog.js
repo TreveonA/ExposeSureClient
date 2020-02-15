@@ -6,7 +6,7 @@ import APIURL from '../../helpers/environment'
 const AdLog = (props) => {
 
     const deleteAd = (ad) => {
-        fetch(`http://${APIURL}/api/adlog/delete/${ad.id}`, {
+        fetch(`${APIURL}/api/adlog/delete/${ad.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type':'application/json',

@@ -11,7 +11,7 @@ const AdEdit = (props) => {
 
     const updateCurrent = (event) => {
         event.preventDefault()
-        fetch(`http://${APIURL}/api/adlog/update/${props.adToUpdate.id}`, {
+        fetch(`${APIURL}/api/adlog/update/${props.adToUpdate.id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Content-Type':'application/json',

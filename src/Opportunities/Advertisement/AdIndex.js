@@ -34,7 +34,7 @@ function AdIndex(props) {
         setUpdateActive(false)
     }
     const fetchAds = () => {
-        fetch(`http://${APIURL}/api/adlog/`, {
+        fetch(`${APIURL}/api/adlog/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

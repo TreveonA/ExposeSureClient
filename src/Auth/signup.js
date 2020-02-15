@@ -9,7 +9,7 @@ function Signup(props) {
     let [password, setPassword] = useState('')
     let handleSubmit = (event) => {
         event.preventDefault()
-        fetch(`http://${APIURL}/api/user/createuser`, {
+        fetch(`${APIURL}/api/user/createuser`, {
             method: 'POST',
             body: JSON.stringify({ user: { username: username, password: password} }),
             headers: new Headers({
