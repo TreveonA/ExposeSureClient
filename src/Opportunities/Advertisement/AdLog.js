@@ -1,11 +1,12 @@
 import React from 'react'
 import { Table, Button } from 'reactstrap'
 import AdIndex from './AdIndex'
+import APIURL from '../../helpers/environment'
 
 const AdLog = (props) => {
 
     const deleteAd = (ad) => {
-        fetch(`http://localhost:5000/api/adlog/delete/${ad.id}`, {
+        fetch(`http://${APIURL}/api/adlog/delete/${ad.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type':'application/json',

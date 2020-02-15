@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import APIURL from '../../helpers/environment'
 
 const AdEdit = (props) => {
     const [editLocation, setEditLocation] = useState(props.adToUpdate.location);
@@ -10,7 +11,7 @@ const AdEdit = (props) => {
 
     const updateCurrent = (event) => {
         event.preventDefault()
-        fetch(`http://localhost:5000/api/adlog/update/${props.adToUpdate.id}`, {
+        fetch(`http://${APIURL}/api/adlog/update/${props.adToUpdate.id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Content-Type':'application/json',

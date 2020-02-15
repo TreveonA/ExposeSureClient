@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import APIURL from '../../helpers/environment'
 
 // a function
 
@@ -14,7 +15,7 @@ const AdCreate = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        fetch("http://localhost:5000/api/adlog", {
+        fetch(`http://${APIURL}/api/adlog`, {
             method: 'POST',
             headers: new Headers ({
                 "Content-Type": "application/json",

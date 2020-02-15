@@ -8,6 +8,7 @@ import clearToken from '../../Navbar/Navbar'
 import classnames from 'classnames'
 import SponsIndex from '../Sponsorships/SponsIndex'
 import SponsCreate from '../Sponsorships/SponsCreate'
+import APIURL from '../../helpers/environment'
 
 function AdIndex(props) {
     const [ads, setAds] = useState([])
@@ -33,7 +34,7 @@ function AdIndex(props) {
         setUpdateActive(false)
     }
     const fetchAds = () => {
-        fetch('http://localhost:5000/api/adlog/', {
+        fetch(`http://${APIURL}/api/adlog/`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
