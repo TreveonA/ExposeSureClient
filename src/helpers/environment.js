@@ -18,6 +18,6 @@ let APIURL = '';
 if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1') {
     APIURL = 'http://localhost:5000';
 } else {
-    APIURL = 'https://ta-exposesure-server.herokuapp.com/'
+    APIURL = 'https://ta-exposesure-server.herokuapp.com'
 }
 export default APIURL;

@@ -104,7 +104,7 @@ function AdIndex(props) {
             <Row>
                 
                 <Col>
-                    <AdLogReadOnly 
+                    <AdLogReadOnly
                     ads={ads} 
                     fetchAds = {fetchAds} 
                     // token={props.token}

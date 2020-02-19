@@ -43,7 +43,6 @@ const AdCreate = (props) => {
 
     return(
         <>
-        
             <h3>Post an Ad</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
