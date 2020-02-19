@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 
 import Auth  from "./Auth/Auth"
 import AdIndex from './Opportunities/Advertisement/AdIndex';
-import Sitebar from './Navbar/Navbar';
 
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
   }
 
   const protectedViews = () => {
-    return (localStorage.getItem('token') === sessionToken ? <AdIndex token={sessionToken} /> :
+    return (localStorage.getItem('token') === sessionToken ? <AdIndex token={sessionToken} clearToken={clearToken} /> :
     <Auth updateToken={updateToken} /> )
   }
 
@@ -34,7 +33,7 @@ function App() {
     <div className="App">
       <h1>Welcome to ExposeSure</h1>
       <p><b>Pick your place in the market and spread the word</b></p>
-      <Sitebar clickLogout={clearToken}/>
+      
       {protectedViews()}
       
       

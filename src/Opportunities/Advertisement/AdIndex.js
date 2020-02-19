@@ -4,11 +4,10 @@ import AdCreate from './AdCreate'
 import AdLog from './AdLog'
 import AdEdit from './AdEdit'
 import Sitebar from '../../Navbar/Navbar'
-import clearToken from '../../Navbar/Navbar'
+import clearToken from '../../App'
 import classnames from 'classnames'
-import SponsIndex from '../Sponsorships/SponsIndex'
-import SponsCreate from '../Sponsorships/SponsCreate'
 import APIURL from '../../helpers/environment'
+import AdLogReadOnly from './AdLogReadOnly'
 
 function AdIndex(props) {
     const [ads, setAds] = useState([])
@@ -16,7 +15,8 @@ function AdIndex(props) {
     const [adToUpdate, setAdToUpdate] = useState({});
 
     const [activeTab, setActiveTab] = useState('1')
-    const toggle = tab => { if(activeTab !== tab) setActiveTab(tab)}
+    const toggle = tab => { 
+        if(activeTab !== tab) setActiveTab(tab)}
 
     
     
@@ -49,15 +49,29 @@ function AdIndex(props) {
     }, [])
 
     return (
-        <Container>
-            <Row>
-             <Col>
-              
-                
-             
-            </Col>
-          </Row>
-        
+        <Container className='log-background'>
+          <Sitebar clickLogout={props.clearToken}/>
+                  <Nav tabs>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '1' })}
+            onClick={() => { toggle('1'); }}
+          >
+           <b>My Opportunities</b> 
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === '2' })}
+            onClick={() => { toggle('2'); }}
+          >
+            <b>Opportunities</b>
+          </NavLink>
+        </NavItem>
+      </Nav>
+      <TabContent activeTab={activeTab}>
+        <TabPane tabId="1">
+          
             <Row>
                 <Col md="3">
                     <AdCreate fetchAds = {fetchAds} token={props.token} />
@@ -80,9 +94,42 @@ function AdIndex(props) {
                     null
                 }
             </Row>
+              {/* <h4>Tab 1 Contents</h4> */}
+
+            
+        </TabPane>
+        <TabPane tabId="2">
+          <Row>
+            <Col>
+            <Row>
+                
+                <Col>
+                    <AdLogReadOnly 
+                    ads={ads} 
+                    fetchAds = {fetchAds} 
+                    // token={props.token}
+                    
+                    />
+                </Col>
+                
+            </Row>
+            </Col>
+          </Row>
+        </TabPane>
+      </TabContent>
+            <Row>
+             <Col>
+              
+             
+            </Col>
+          </Row>
+        
                
         </Container>
     )
+
+    
 }
 
 export default AdIndex
+

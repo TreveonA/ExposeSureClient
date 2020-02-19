@@ -1,7 +1,7 @@
 // imports
 
 import React, { useState } from 'react'
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody} from 'reactstrap'
 import APIURL from '../../helpers/environment'
 
 // a function
@@ -43,6 +43,7 @@ const AdCreate = (props) => {
 
     return(
         <>
+        
             <h3>Post an Ad</h3>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -69,7 +70,7 @@ const AdCreate = (props) => {
                     <Label htmlFor="Cost" />
                     <Input onChange = {(e) => {setCost(e.target.value)}} name = "cost" placeholder='Enter Ad Cost' value={cost} />
                 </FormGroup>
-                <Button type="submit">Click to Submit</Button>
+                <Button type="submit">Post</Button>
             </Form>
         </>
     )

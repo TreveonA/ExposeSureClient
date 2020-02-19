@@ -1,20 +1,11 @@
 import React from 'react'
 import { Table, Button } from 'reactstrap'
-import AdIndex from './AdIndex'
+import AdIndex from '../Advertisement/AdIndex'
 import APIURL from '../../helpers/environment'
 
-const AdLog = (props) => {
+const AdLogReadOnly = (props) => {
 
-    const deleteAd = (ad) => {
-        fetch(`${APIURL}/api/adlog/delete/${ad.id}`, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Content-Type':'application/json',
-                'Authorization': props.token
-            })
-        })
-        .then(() => props.fetchAds())
-    }
+    
     const AdMapper = () => {
         return props.ads.map(
             function (ad, index) {
@@ -27,8 +18,7 @@ const AdLog = (props) => {
                     <td>{ad.contact}</td>
                     <td>{ad.cost}</td>
                     <td>
-                        <Button color = 'success' onClick={() => {props.editUpdateAd(ad); props.updateOn()}}>Update</Button>
-                        <Button color = "danger" onClick={() => {deleteAd(ad)}}>Delete</Button>
+                        
                     </td>
                 </tr>
                 )
@@ -38,7 +28,7 @@ const AdLog = (props) => {
     
     return (
         <>
-          <h3>My Opportunities</h3>
+          <h3>Find Your Spot</h3>
           <hr />
           <Table striped>
             <thead>
@@ -59,4 +49,4 @@ const AdLog = (props) => {
       )
 }
 
-export default AdLog
+export default AdLogReadOnly
