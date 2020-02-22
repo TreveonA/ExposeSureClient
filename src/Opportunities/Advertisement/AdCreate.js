@@ -15,7 +15,7 @@ const AdCreate = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        fetch(`${APIURL}/api/adlog`, {
+        fetch(`${APIURL}/api/adlog/`, {
             method: 'POST',
             headers: new Headers ({
                 "Content-Type": "application/json",
