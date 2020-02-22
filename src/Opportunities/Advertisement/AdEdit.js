@@ -3,7 +3,7 @@ import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, Button } 
 import APIURL from '../../helpers/environment'
 
 const AdEdit = (props) => {
-    const [editLocation, setEditLocation] = useState(props.adToUpdate.location);
+    const [editOpportunity, setEditOpportunity] = useState(props.adToUpdate.opportunity);
     const [editDuration, setEditDuration] = useState(props.adToUpdate.duration);
     const [editSize, setEditSize] = useState(props.adToUpdate.size);
     const [editContact, setEditContact] = useState(props.adToUpdate.contact)
@@ -18,7 +18,7 @@ const AdEdit = (props) => {
                 'Authorization': props.token
             }),
             body: JSON.stringify({adlog: {
-                location: editLocation, 
+                opportunity: editOpportunity, 
                 duration: editDuration, 
                 size: editSize,
                 contact: editContact,
@@ -33,8 +33,8 @@ const AdEdit = (props) => {
             <ModalBody>
                 <Form onSubmit={updateCurrent}>
                     <FormGroup>
-                        <Label htmlFor="location">Edit Location:</Label>
-                        <Input name="location" value={editLocation} onChange={(e) => setEditLocation(e.target.value)} />
+                        <Label htmlFor="opportunity">Edit Opportunity:</Label>
+                        <Input name="opportunity" value={editOpportunity} onChange={(e) => setEditOpportunity(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="duration">Edit Duration:</Label>

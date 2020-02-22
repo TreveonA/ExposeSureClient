@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Container} from 'reactstrap'
 
 import Auth  from "./Auth/Auth"
 import AdIndex from './Opportunities/Advertisement/AdIndex';
@@ -31,8 +32,11 @@ function App() {
 
   return (
     <div className="App">
+      <Container>
+
       <h1>Welcome to ExposeSure</h1>
       <p><b>Pick your place in the market and spread the word</b></p>
+      </Container>
       
       {protectedViews()}
       

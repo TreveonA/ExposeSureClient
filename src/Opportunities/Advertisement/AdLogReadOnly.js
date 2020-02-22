@@ -3,11 +3,11 @@ import { Table, Button } from 'reactstrap'
 import AdIndex from './AdIndex'
 import APIURL from '../../helpers/environment'
 
-const AdLog = (props) => {
+const AdLogReadOnly = (props) => {
 
     const fetchAllAds = (ad) => {
-        fetch(`${APIURL}/api/adlog/${ad.id}`, {
-            method: 'POST',
+        fetch(`${APIURL}/api/adlog/getall`, {
+            method: 'GET',
             headers: new Headers({
                 'Content-Type':'application/json',
                 'Authorization': props.token
@@ -26,7 +26,10 @@ const AdLog = (props) => {
                     <td>{ad.size}</td>
                     <td>{ad.contact}</td>
                     <td>{ad.cost}</td>
-                    
+                    <td>
+                        {/* <Button color = 'success' onClick={() => {props.editUpdateAd(ad); props.updateOn()}}>Update</Button>
+                        <Button color = "danger" onClick={() => {deleteAd(ad)}}>Delete</Button> */}
+                    </td>
                 </tr>
                 )
             }
@@ -56,4 +59,4 @@ const AdLog = (props) => {
       )
 }
 
-export default AdLog
+export default AdLogReadOnly

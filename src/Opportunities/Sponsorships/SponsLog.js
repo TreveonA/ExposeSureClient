@@ -20,7 +20,7 @@ const SponsLog = (props) => {
                 return( 
                 <tr key={index}>
                     <th scope="row">{spons.id}</th>
-                    <td>{spons.location}</td>
+                    <td>{spons.opportunity}</td>
                     <td>{spons.duration}</td>
                     <td>{spons.size}</td>
                     <td>{spons.contact}</td>

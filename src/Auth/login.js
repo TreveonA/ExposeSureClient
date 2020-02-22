@@ -28,7 +28,7 @@ function Login(props) {
         <div>
             <h3>Login</h3>
             <Form onSubmit={handleSubmit}>
-                <FormGroup md->
+                <FormGroup>
                     
                     <Label htmlFor="username">Username</Label>
                     <Input 

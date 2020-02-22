@@ -5,7 +5,7 @@ import {Container, Row, Button, Modal, ModalHeader, Form, Label, Input} from 're
 
 export function Auth(props){
     const [showLogin, setShowLogin] = useState(true)
-    const [buttonName, setButtonName] = useState("Show Signup")
+    const [buttonName, setButtonName] = useState("To Signup")
 
     function toggleView(){
         if (showLogin === true){

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Container, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
+import {Container, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap'
 import AdCreate from './AdCreate'
 import AdLog from './AdLog'
 import AdEdit from './AdEdit'
@@ -34,7 +34,7 @@ function AdIndex(props) {
         setUpdateActive(false)
     }
     const fetchAds = () => {
-        fetch(`${APIURL}/api/adlog/`, {
+        fetch(`${APIURL}/api/adlog`, {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
